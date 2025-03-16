@@ -2,12 +2,14 @@
 import { storyblokInit } from "@storyblok/react/rsc";
 import { PropsWithChildren } from "react";
 import page from "./page";
-import { Teaser } from "./storyblok/teaser";
+import { Hero } from "./storyblok/hero";
+import { Links } from "./storyblok/links";
 
 storyblokInit({
   components: {
     page: page,
-    teaser: Teaser,
+    hero: Hero,
+    links: Links,
   },
 
   enableFallbackComponent: true,
