@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { StoryblokProvider } from "@/components/StoryblokProvider";
 import { apiPlugin, storyblokInit } from "@storyblok/react";
 import "./globals.scss";
+import { Header } from "@/components/ui/header/header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,7 +25,10 @@ export default function RootLayout({
   return (
     <StoryblokProvider>
       <html lang="sv">
-        <body>{children}</body>
+        <body>
+          <Header />
+          {children}
+        </body>
       </html>
     </StoryblokProvider>
   );
