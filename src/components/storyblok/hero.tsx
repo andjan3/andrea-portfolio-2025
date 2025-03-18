@@ -10,7 +10,7 @@ export const Hero = ({ blok }: any) => {
       {...storyblokEditable(blok)}
       className={`h-full w-[100%] flex flex-col justify-center mx-auto`}
     >
-      <div className="relative w-[100%] h-[100vh]">
+      <div className="relative w-[100%] h-[110vh]">
         <Image
           src={blok.hero_image.filename}
           alt={blok.hero_image.alt}
@@ -19,7 +19,7 @@ export const Hero = ({ blok }: any) => {
         />
       </div>
 
-      <div className="absolute top-0 left-0 w-[100%] h-[100vh] bg-black opacity-40 z-10"></div>
+      <div className="absolute top-0 left-0 w-[100%] h-[110vh] bg-black opacity-40 z-10"></div>
       <div className="z-20 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[40%] text-white flex flex-col gap-5">
         <div className="flex justify-start items-center gap-4 ">
           <hr className="w-[10%] border-t-2 border-[#FBD784]" />
