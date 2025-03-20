@@ -4,13 +4,13 @@ const usermail = process.env.MARKNAD_EMAIL;
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
-  const { name, mail, message, phone } = await req.json();
+  const { name, email, message, number } = await req.json();
 
   const messageBody = `
     <div style="background-color: #f9f9f9; padding: 20px;">
       <p>Meddelande från: ${name}</p>
-      <h3>Email: ${mail}</h3>
-      <p>tel: ${phone}</p>
+      <h3>Email: ${email}</h3>
+      <p>tel: ${number}</p>
       <p>Meddelande: ${message}</p>
     </div>
   `;
