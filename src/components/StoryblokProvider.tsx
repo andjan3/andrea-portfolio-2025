@@ -5,12 +5,14 @@ import page from "./page";
 import { Hero } from "./storyblok/hero";
 import { Links } from "./storyblok/links";
 import { ProjectBlock } from "./storyblok/project-block";
+import { Layer } from "./storyblok/layer";
 
 storyblokInit({
   components: {
     page: page,
     hero: Hero,
     links: Links,
+    layer: Layer,
     project_block: ProjectBlock,
   },
 
