@@ -35,21 +35,23 @@ export const ProjectBlock = ({ blok }: any) => {
                   </div>
                 ))}
               </div>
-
-              <div className="text-[#FBD784] font-normal flex gap-2 items-center">
+              <div className="text-[#FBD784] font-normal flex gap-2 items-center group cursor-pointer">
                 <Link href={blok.link.cached_url} className="text-[18px]">
                   {blok.link_title}
                 </Link>
-                <IoIosArrowRoundForward fontSize={44} />
+                <IoIosArrowRoundForward
+                  fontSize={44}
+                  className="transition-transform duration-300 ease-in-out group-hover:translate-x-2"
+                />
               </div>
             </div>
           </div>
         </div>
-        <div className="relative w-[700px] h-[535px] z-30">
+        <div className="relative w-[700px] h-[535px] z-30 overflow-hidden group">
           <Image
             src={blok.image.filename}
             alt={blok.image.alt}
-            className="object-cover rounded-[10px]"
+            className="object-cover rounded-[10px] transition-transform duration-300 ease-in-out group-hover:scale-110"
             fill
           />
         </div>

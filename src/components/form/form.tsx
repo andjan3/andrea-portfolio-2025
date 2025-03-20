@@ -94,7 +94,9 @@ export const Form = ({ settings }: any) => {
         onChange={handleInputChange}
       />
 
-      <button className="send-btn mt-10 uppercase">{settings.button}</button>
+      <button className="send-btn mt-10 uppercase hover:bg-[#0B1D26]">
+        {settings.button}
+      </button>
     </form>
   );
 };
