@@ -3,6 +3,7 @@ import { StoryblokProvider } from "@/components/StoryblokProvider";
 import { apiPlugin, storyblokInit } from "@storyblok/react";
 import "./globals.scss";
 import { Header } from "@/components/ui/header/header";
+import { Footer } from "@/components/ui/footer/footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,6 +29,7 @@ export default function RootLayout({
         <body>
           <Header />
           {children}
+          <Footer />
         </body>
       </html>
     </StoryblokProvider>
