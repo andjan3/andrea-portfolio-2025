@@ -1,13 +1,23 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ProjectCard } from "../ui/project-card";
 import { TbDots } from "react-icons/tb";
 import { IoIosArrowRoundUp } from "react-icons/io";
 
 export const ProjectBlock = ({ blok }: any) => {
   const [showMoreProjects, setShowMoreProjects] = useState(false);
-
+  const secondContentRef = useRef<HTMLDivElement | null>(null);
   const handleMoreProjects = () => {
+    const newState = !showMoreProjects;
     setShowMoreProjects(!showMoreProjects);
+
+    if (!newState && secondContentRef.current) {
+      setTimeout(() => {
+        window.scrollTo({
+          top: 600,
+          behavior: "smooth",
+        });
+      }, 100);
+    }
   };
 
   const renderCategory = (category: string) => {
@@ -18,7 +28,7 @@ export const ProjectBlock = ({ blok }: any) => {
 
   return (
     <main className="bg-[#0B1D26] h-auto flex flex-col gap-10 pb-64">
-      <div className="flex flex-col gap-44">
+      <div className="flex flex-col gap-44" ref={secondContentRef}>
         {renderCategory("initial_render")}
         {showMoreProjects && renderCategory("second_render")}
       </div>
