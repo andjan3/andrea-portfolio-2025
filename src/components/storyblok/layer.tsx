@@ -7,7 +7,7 @@ export const Layer = ({ blok }: any) => {
       alt={blok.layer.alt}
       width={2000}
       height={400}
-      className="absolute top-[580px] lg:top-[450px] z-10"
+      className="absolute top-[600px] lg:top-[450px] z-10"
     />
   );
 };
