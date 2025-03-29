@@ -14,8 +14,8 @@ export const ProjectCard = ({ blok }: any) => {
         <div className="text-white text-[260px] opacity-10 font-bold z-20 -mt-36">
           {blok.project_number}
         </div>
-        <div className="absolute top-12 left-[8.5rem]">
-          <div className="flex justify-start items-center gap-16 w-[60%]">
+        <div className="absolute flex flex-col justify-center h-[20%] left-[8.5rem]">
+          <div className="flex justify-start items-center gap-16 w-[60%] mb-4">
             <hr className="w-[20%] border-t-2 border-[#FBD784]" />
             <span className="block text-lg text-[#FBD784]">
               {blok.subtitle}
@@ -34,7 +34,7 @@ export const ProjectCard = ({ blok }: any) => {
                 </div>
               ))}
             </div>
-            <div className="text-[#FBD784] font-normal flex gap-2 items-center group cursor-pointer">
+            <div className="text-[#FBD784] font-normal flex gap-2 items-center group cursor-pointer mt-4">
               <Link href={blok.link.cached_url} className="text-[18px]">
                 {blok.link_title}
               </Link>
@@ -46,11 +46,11 @@ export const ProjectCard = ({ blok }: any) => {
           </div>
         </div>
       </div>
-      <div className="relative w-[700px] h-[535px] z-30 overflow-hidden group">
+      <div className="relative w-[730px] h-[535px] z-30 overflow-hidden group">
         <Image
           src={blok.image.filename}
           alt={blok.image.alt}
-          className="object-cover rounded-[10px] transition-transform duration-300 ease-in-out group-hover:scale-110"
+          className="object-cover object-top rounded-[10px] transition-transform duration-300 ease-in-out group-hover:scale-110"
           fill
         />
       </div>
