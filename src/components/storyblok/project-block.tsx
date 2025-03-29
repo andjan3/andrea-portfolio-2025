@@ -1,60 +1,38 @@
-import Image from "next/image";
-import Link from "next/link";
-import { render } from "storyblok-rich-text-react-renderer";
-import { IoIosArrowRoundForward } from "react-icons/io";
+import { useState } from "react";
+import { ProjectCard } from "../ui/project-card";
+import { TbDots } from "react-icons/tb";
+import { IoIosArrowRoundUp } from "react-icons/io";
 
 export const ProjectBlock = ({ blok }: any) => {
-  return (
-    <main className="bg-[#0B1D26] h-[800px]">
-      <div className="grid grid-cols-2 w-[95%] mx-auto gap-32">
-        <div
-          className={`z-30 w-[100%] mx-auto relative ${
-            blok.image_left && "order-2"
-          }`}
-        >
-          <div className="text-white text-[260px] opacity-10 font-bold z-20 -mt-36">
-            {blok.project_number}
-          </div>
-          <div className="absolute top-12 left-[8.5rem]">
-            <div className="flex justify-start items-center gap-16 w-[60%]">
-              <hr className="w-[20%] border-t-2 border-[#FBD784]" />
-              <span className="block text-lg text-[#FBD784]">
-                {blok.subtitle}
-              </span>
-            </div>
-            <div className="ml-10 flex flex-col gap-4">
-              <h2 className="text-white uppercase text-[64px]">{blok.title}</h2>
-              <div className="project-info w-[90%]">
-                {render(blok.project_info)}
-              </div>
+  const [showMoreProjects, setShowMoreProjects] = useState(false);
 
-              <div className="flex gap-4 mt-6 text-white text-[14px] font-light">
-                {blok.technology.map((item: any) => (
-                  <div className="technology" key={item._uid}>
-                    {item.title}
-                  </div>
-                ))}
-              </div>
-              <div className="text-[#FBD784] font-normal flex gap-2 items-center group cursor-pointer">
-                <Link href={blok.link.cached_url} className="text-[18px]">
-                  {blok.link_title}
-                </Link>
-                <IoIosArrowRoundForward
-                  fontSize={44}
-                  className="transition-transform duration-300 ease-in-out group-hover:translate-x-2"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="relative w-[700px] h-[535px] z-30 overflow-hidden group">
-          <Image
-            src={blok.image.filename}
-            alt={blok.image.alt}
-            className="object-cover rounded-[10px] transition-transform duration-300 ease-in-out group-hover:scale-110"
-            fill
-          />
-        </div>
+  const handleMoreProjects = () => {
+    setShowMoreProjects(!showMoreProjects);
+  };
+
+  const renderCategory = (category: string) => {
+    return blok.projects
+      .filter((item: any) => item.render_category == category)
+      .map((project: any) => <ProjectCard key={project._uid} blok={project} />);
+  };
+
+  return (
+    <main className="bg-[#0B1D26] h-auto flex flex-col gap-10 pb-64">
+      <div className="flex flex-col gap-44">
+        {renderCategory("initial_render")}
+        {showMoreProjects && renderCategory("second_render")}
+      </div>
+      <div className="flex justify-center mt-32">
+        <button
+          className="bg-[#354147] py-2 px-7 rounded-[60px]  border-[1px] border-white hover:bg-[#0B1D26]"
+          onClick={() => handleMoreProjects()}
+        >
+          {showMoreProjects ? (
+            <IoIosArrowRoundUp fontSize={60} className="text-white" />
+          ) : (
+            <TbDots fontSize={60} className="text-white" />
+          )}
+        </button>
       </div>
     </main>
   );

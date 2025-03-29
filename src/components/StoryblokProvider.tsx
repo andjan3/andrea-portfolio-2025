@@ -13,7 +13,7 @@ storyblokInit({
     hero: Hero,
     links: Links,
     layer: Layer,
-    project_block: ProjectBlock,
+    projects: ProjectBlock,
   },
 
   enableFallbackComponent: true,
