@@ -27,14 +27,17 @@ export const ProjectBlock = ({ blok }: any) => {
   };
 
   return (
-    <main className="bg-[#0B1D26] h-auto flex flex-col gap-10 pb-64">
-      <div className="flex flex-col gap-44" ref={secondContentRef}>
+    <main
+      id="projects"
+      className="bg-[#0B1D26] h-auto flex flex-col gap-10 pb-10 lg:pb-64 -mt-20 lg:mt-0"
+    >
+      <div className="flex flex-col gap-5 lg:gap-44" ref={secondContentRef}>
         {renderCategory("initial_render")}
         {showMoreProjects && renderCategory("second_render")}
       </div>
-      <div className="flex justify-center mt-32">
+      <div className="flex justify-center mt-5 lg:mt-32">
         <button
-          className="bg-[#354147] py-2 px-7 rounded-[60px]  border-[1px] border-white hover:bg-[#0B1D26]"
+          className="bg-[#354147] lg:py-2 py-1 px-5 lg:px-7 rounded-[60px]  border-[1px] border-white hover:bg-[#0B1D26]"
           onClick={() => handleMoreProjects()}
         >
           {showMoreProjects ? (

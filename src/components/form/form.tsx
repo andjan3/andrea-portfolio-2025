@@ -37,7 +37,7 @@ export const Form = ({ settings }: any) => {
   };
 
   return (
-    <form className="flex flex-col" onSubmit={handleSubmit}>
+    <form className="flex flex-col w-[100%] lg:mx-0" onSubmit={handleSubmit}>
       <label
         htmlFor="fullname"
         className="text-white text-[20px] font-light mb-4"
@@ -47,7 +47,7 @@ export const Form = ({ settings }: any) => {
       <input
         id="fullname"
         name="name"
-        className="rounded-[10px] p-6 "
+        className="rounded-[10px] p-4 lg:p-6 "
         value={formData.name}
         onChange={handleInputChange}
         required
@@ -61,7 +61,7 @@ export const Form = ({ settings }: any) => {
       <input
         id="email"
         name="email"
-        className="rounded-[10px] p-6"
+        className="rounded-[10px] p-4 lg:p-6"
         value={formData.email}
         onChange={handleInputChange}
         required
@@ -74,7 +74,7 @@ export const Form = ({ settings }: any) => {
       </label>
       <input
         id="phonenumber"
-        className="rounded-[10px] p-6"
+        className="rounded-[10px] p-4 lg:p-6"
         name="number"
         value={formData.number}
         onChange={handleInputChange}
@@ -88,7 +88,7 @@ export const Form = ({ settings }: any) => {
         {settings.input_message}
       </label>
       <textarea
-        className="rounded-[10px] h-[40vh]"
+        className="rounded-[10px] h-[30vh] lg:h-[40vh]"
         value={formData.message}
         name="message"
         onChange={handleInputChange}
