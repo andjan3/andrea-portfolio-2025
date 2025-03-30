@@ -3,15 +3,32 @@ import { CiMenuFries } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Socials } from "@/components/socials/socials";
 
 export const Navigation = ({ settings }: any) => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [scroll, setScroll] = useState(false);
 
   const handleMenu = () => {
     setOpenMenu(!openMenu);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <nav className="flex lg:grid grid-cols-3 justify-between items-center w-[100%] absolute top-0 left-0 z-20 text-white p-8 lg:p-12 ">
       <Link href={"#"} className="text-[32px]">
@@ -19,14 +36,18 @@ export const Navigation = ({ settings }: any) => {
       </Link>
 
       <CiMenuFries
-        className="block lg:hidden"
+        className={`fixed right-4 z-50 block lg:hidden ${
+          scroll
+            ? "bg-[#354147]  rounded-full p-4 w-[70px] h-[70px]"
+            : "bg-transparent"
+        }  `}
         fontSize={40}
         onClick={() => handleMenu()}
       />
       <div
         className={`fixed flex-col h-[100vh] w-full left-0 top-0 z-50 bg-white gap-5 p-10 transition-all duration-500 right-0 ${
           openMenu ? "translate-x-0" : "translate-x-full"
-        }`}
+        } `}
       >
         <div className="flex justify-end">
           <IoMdClose

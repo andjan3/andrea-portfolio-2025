@@ -122,7 +122,7 @@ export const ProjectCard = ({ blok }: any) => {
           </div>
         </div>
       </div>
-      <div className="relative w-[350px] mx-auto h-[350px] lg:w-[730px] lg:h-[535px] z-30 overflow-hidden group mt-10 lg:mt-0">
+      <div className="relative w-[350px] mx-auto h-[350px] lg:w-[730px] lg:h-[535px] z-10 overflow-hidden group mt-10 lg:mt-0 ">
         <Image
           src={blok.image.filename}
           alt={blok.image.alt}

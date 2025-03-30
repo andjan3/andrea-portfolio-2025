@@ -29,7 +29,7 @@ export const ProjectBlock = ({ blok }: any) => {
   return (
     <main
       id="projects"
-      className="bg-[#0B1D26] h-auto flex flex-col gap-10 pb-10 lg:pb-64 -mt-20 lg:mt-0"
+      className="bg-[#0B1D26] h-auto flex flex-col gap-10 pb-10 lg:pb-32 -mt-20 lg:mt-0"
     >
       <div className="flex flex-col gap-5 lg:gap-44" ref={secondContentRef}>
         {renderCategory("initial_render")}

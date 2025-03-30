@@ -6,6 +6,7 @@ import { Hero } from "./storyblok/hero";
 import { Links } from "./storyblok/links";
 import { ProjectBlock } from "./storyblok/project-block";
 import { Layer } from "./storyblok/layer";
+import { About } from "./about";
 
 storyblokInit({
   components: {
@@ -14,6 +15,7 @@ storyblokInit({
     links: Links,
     layer: Layer,
     projects: ProjectBlock,
+    about: About,
   },
 
   enableFallbackComponent: true,
