@@ -12,7 +12,7 @@ export const Skills = ({ item }: any) => {
   return (
     <div
       key={item._uid}
-      className="lg:w-[50%] cursor-pointer"
+      className="lg:w-[80%] cursor-pointer"
       onClick={() => handleDropdown(item._uid)}
     >
       <div className="flex items-center text-white justify-between py-2 border-b-[1px] ">
