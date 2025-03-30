@@ -12,7 +12,7 @@ export const About = ({ blok }: any) => {
             <h2 className="block text-lg text-[#FBD784]">{blok.subtitle}</h2>
           </div>
           <div className="-mt-12 lg:mt-0 flex  flex-col justify-center items-center">
-            <div className="relative w-[350px] h-[350px] lg:w-[450px] lg:h-[450px] mt-20 ">
+            <div className="relative w-[300px] h-[300px] lg:w-[450px] lg:h-[450px] mt-20 ">
               <Image
                 src={blok.image.filename}
                 alt={blok.image.alt}
