@@ -28,7 +28,7 @@ export const About = ({ blok }: any) => {
             <h3 className="text-white uppercase text-[40px] lg:text-[64px] lg:text-start -mt-4 text-center lg:mt-0 lg:w-[20%]">
               {blok.title}
             </h3>
-            <div className="project-info mt-5 lg:mt-10 text-center lg:text-start">
+            <div className="project-info mt-5 lg:mt-10 text-center lg:text-start lg:w-[80%]">
               {render(blok.content)}
             </div>
 
