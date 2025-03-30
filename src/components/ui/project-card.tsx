@@ -123,12 +123,14 @@ export const ProjectCard = ({ blok }: any) => {
         </div>
       </div>
       <div className="relative w-[350px] mx-auto h-[350px] lg:w-[730px] lg:h-[535px] z-10 overflow-hidden group mt-10 lg:mt-0 ">
-        <Image
-          src={blok.image.filename}
-          alt={blok.image.alt}
-          className="object-cover object-top rounded-[10px] transition-transform duration-300 ease-in-out group-hover:scale-110"
-          fill
-        />
+        <Link href={blok.link.cached_url}>
+          <Image
+            src={blok.image.filename}
+            alt={blok.image.alt}
+            className="object-cover object-top rounded-[10px] transition-transform duration-300 ease-in-out group-hover:scale-110"
+            fill
+          />
+        </Link>
       </div>
       <div className="lg:hidden text-[#FBD784] font-normal flex gap-2 items-center group cursor-pointer mt-4 w-[95%] mx-auto">
         <Link href={blok.link.cached_url} className="text-[18px]">
