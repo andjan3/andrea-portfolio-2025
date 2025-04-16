@@ -122,7 +122,7 @@ export const ProjectCard = ({ blok }: any) => {
           </div>
         </div>
       </div>
-      <div className="relative w-[350px] mx-auto h-[350px] lg:w-[730px] lg:h-[535px] z-10 overflow-hidden group mt-10 lg:mt-0 ">
+      <div className="relative w-[350px] mx-auto h-[350px] lg:w-[93%] lg:h-[535px] z-10 overflow-hidden group mt-10 lg:mt-0 ">
         <Link href={blok.link.cached_url}>
           <Image
             src={blok.image.filename}
