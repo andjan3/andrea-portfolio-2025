@@ -96,7 +96,7 @@ export const ProjectCard = ({ blok }: any) => {
             </span>
           </div>
           <div className="lg:ml-10 flex flex-col gap-4 w-[95%] mx-auto lg:w-[100%] lg:mx-0">
-            <h2 className="text-white uppercase text-[40px] lg:text-[64px] lg:text-start -mt-4 lg:mt-0">
+            <h2 className="text-white uppercase text-[40px] lg:text-[60px] lg:text-start -mt-4 lg:mt-0">
               {blok.title}
             </h2>
             <div className="project-info w-[100%] lg:w-[90%] mx-auto lg:mx-0 lg:text-start">
