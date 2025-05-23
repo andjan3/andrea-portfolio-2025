@@ -10,11 +10,17 @@ export const metadata: Metadata = {
   description: "Andréa Jandergren, Front end developer",
 };
 
+const cachedFetch = (input: any, init?: any): Promise<Response> => {
+  return fetch(input, {
+    ...init,
+    cache: "no-cache",
+  });
+};
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
   use: [apiPlugin],
   apiOptions: {
-    region: "eu",
+    fetch: cachedFetch,
   },
 });
 
